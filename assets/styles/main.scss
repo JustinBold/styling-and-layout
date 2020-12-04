@@ -1,0 +1,242 @@
+---
+---
+
+@import "grid";
+
+/*88888888 .d88888b.  888b    888 88888888888 .d8888b.  
+888       d88P" "Y88b 8888b   888     888    d88P  Y88b 
+888       888     888 88888b  888     888    Y88b.      
+8888888   888     888 888Y88b 888     888     "Y888b.   
+888       888     888 888 Y88b888     888        "Y88b. 
+888       888     888 888  Y88888     888          "888 
+888       Y88b. .d88P 888   Y8888     888    Y88b  d88P 
+888        "Y88888P"  888    Y888     888     "Y8888*/
+
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+/*8     888     d8888 8888888b.   .d8888b.  
+888     888    d88888 888   Y88b d88P  Y88b 
+888     888   d88P888 888    888 Y88b.      
+Y88b   d88P  d88P 888 888   d88P  "Y888b.   
+ Y88b d88P  d88P  888 8888888P"      "Y88b. 
+  Y88o88P  d88P   888 888 T88b         "888 
+   Y888P  d8888888888 888  T88b  Y88b  d88P 
+    Y8P  d88P     888 888   T88b  "Y8888*/
+
+$gutter: 20px;
+$gutter-xs: $gutter / 4;
+$gutter-sm: $gutter / 2;
+$gutter-md: $gutter * 1.5;
+$gutter-lg: $gutter * 2;
+$gutter-xl: $gutter * 3;
+
+
+$font-default: "system";
+
+$color-default-100: #f5fbfa;
+$color-default-200:#eee;
+$color-default-300:#ddd;
+$color-default-400:#ccc;
+$color-default-900: #333;
+
+$color-accent-100: #ddedea;
+$color-accent-500: #1abc9c;
+$color-accent-600: #16a085;
+
+$border-radius: 4px;
+
+ /*8888b.  888      .d88888b.  888888b.         d8888 888      
+d88P  Y88b 888     d88P" "Y88b 888  "88b       d88888 888      
+888    888 888     888     888 888  .88P      d88P888 888      
+888        888     888     888 8888888K.     d88P 888 888      
+888  88888 888     888     888 888  "Y88b   d88P  888 888      
+888    888 888     888     888 888    888  d88P   888 888      
+Y88b  d88P 888     Y88b. .d88P 888   d88P d8888888888 888      
+ "Y8888P88 88888888 "Y88888P"  8888888P" d88P     888 888888*/
+
+:root {
+  font-family: $font-default;
+  font-size: 18px;
+  line-height: 1.6;
+  color: $color-default-900;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $color-default-100;
+}
+h1,h2,h3,h4,h5,h6{
+  margin-top: -0.83em;
+  padding-top: 0.83em;
+  line-height: 1.2
+}
+hr {
+  margin: $gutter-lg 0;
+  border: 1px solid $color-default-400;
+}
+p {
+  code {
+    display: inline-block;
+    padding: 3px $gutter-xs;
+    line-height: 1em;
+  }
+}
+code {
+  display: block;
+  padding: $gutter-sm $gutter;
+  color: $color-default-200;
+  background-color: $color-default-900;
+  border-radius: $border-radius;
+}
+a {
+  text-decoration: none;
+  color: $color-accent-600;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+blockquote {
+  display: flex;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 20px;
+  font-size: 0.8em;
+  background-color: $color-accent-100;
+  border-left: 10px solid $color-accent-500;
+  border-radius: 0 $border-radius $border-radius 0;
+
+  &:before {
+    content: 'Note';
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  p:last-of-type {
+    margin: 0;
+  }
+}
+
+/*8             d8888 Y88b   d88P  .d88888b.  888     888 88888888888 
+888            d88888  Y88b d88P  d88P" "Y88b 888     888     888     
+888           d88P888   Y88o88P   888     888 888     888     888     
+888          d88P 888    Y888P    888     888 888     888     888     
+888         d88P  888     888     888     888 888     888     888     
+888        d88P   888     888     888     888 888     888     888     
+888       d8888888888     888     Y88b. .d88P Y88b. .d88P     888     
+88888888 d88P     888     888      "Y88888P"   "Y88888P"      8*/
+
+$width-sidebar: 300px;
+$max-width-content: 1000px;
+
+.main {
+  padding-left: $width-sidebar;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: $width-sidebar;
+  height: 100vh;
+  padding: $gutter-md;
+  color: $color-default-100;
+  background-color: $color-default-900;
+  overflow: auto;
+
+  &__logo {
+    display: block;
+    margin-bottom: $gutter-md;
+
+    &:hover {
+      opacity: 1;
+
+      .square {
+        width: 50%;
+      }
+    }
+    .logo {
+      display: block;
+      width: 200px;
+    }
+    .square {
+      transition: all .2s ease-in-out;
+    }
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &-link {
+      &:hover {
+        color: $color-default-100;
+        opacity: 1;
+      }
+    }
+  }
+  &__sublist {
+    margin: 5px 0 0 0;
+    padding: 0 0 0 15px;
+    list-style-type: none;
+    border-left: 1px solid $color-accent-500;
+
+    &-link {
+      font-size: 80%;
+      color: $color-default-100;
+    }
+    .sidebar__sublist {
+      border-left: 0;
+    }
+  }
+}
+.content {
+  max-width: $max-width-content;
+  padding: $gutter-md;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*8      8888888888 .d8888b.   .d8888b.   .d88888b.  888b    888  .d8888b.  
+888      888       d88P  Y88b d88P  Y88b d88P" "Y88b 8888b   888 d88P  Y88b 
+888      888       Y88b.      Y88b.      888     888 88888b  888 Y88b.      
+888      8888888    "Y888b.    "Y888b.   888     888 888Y88b 888  "Y888b.   
+888      888           "Y88b.     "Y88b. 888     888 888 Y88b888     "Y88b. 
+888      888             "888       "888 888     888 888  Y88888       "888 
+888      888       Y88b  d88P Y88b  d88P Y88b. .d88P 888   Y8888 Y88b  d88P 
+88888888 8888888888 "Y8888P"   "Y8888P"   "Y88888P"  888    Y888  "Y8888*/
+
+.illustration {
+  display: block;
+  width: 100%;
+}
+.lesson-1__section {
+  margin-bottom: -$gutter-md;
+}
+.block {
+  margin-bottom: $gutter-md;
+  padding: $gutter-lg;
+  background-color: $color-accent-500;
+  border-radius: $border-radius;
+
+  &--large {
+    padding: $gutter-xl;
+  }
+}

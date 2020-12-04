@@ -1,0 +1,40 @@
+<aside class="sidebar">
+  <a class="sidebar__logo" href="/">
+    {% include logo.svg %}
+  </a>
+  {% assign lessons = site.pages | where: 'type', 'lesson' %}
+  <ul class="sidebar__list">
+    {% for lesson in lessons %}
+      <li class="sidebar__list-item">
+        <a class="sidebar__list-link" href="{{ lesson.permalink }}">{{ lesson.title | replace: '_', ':' }}</a>
+        {% if page.url contains lesson.permalink and lesson.table_of_contents %}
+          <ul class="sidebar__sublist">
+            {% for item in lesson.table_of_contents %}
+              <li class="sidebar__sublist-item">
+                <a class="sidebar__sublist-link" href="#{{ item.title | slugify }}">{{ item.title }}</a>
+                {% if item.list %}
+                  <ul class="sidebar__sublist">
+                    {% for subitem in item.list %}
+                    <li class="sidebar__sublist-item">
+                      <a class="sidebar__sublist-link" href="#{{ subitem.title | slugify }}">{{ subitem.title }}</a>
+                      {% if subitem.list %}
+                        <ul class="sidebar__sublist">
+                          {% for subsubitem in subitem.list %}
+                            <li class="sidebar__sublist-item">
+                              <a class="sidebar__sublist-link" href="#{{ subsubitem.title | slugify }}">{{ subsubitem.title }}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</aside>
