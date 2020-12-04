@@ -1,12 +1,12 @@
 <aside class="sidebar">
-  <a class="sidebar__logo" href="/">
+  <a class="sidebar__logo" href="{{ site.baseurl }}">
     {% include logo.svg %}
   </a>
   {% assign lessons = site.pages | where: 'type', 'lesson' %}
   <ul class="sidebar__list">
     {% for lesson in lessons %}
       <li class="sidebar__list-item">
-        <a class="sidebar__list-link" href="{{ lesson.permalink }}">{{ lesson.title | replace: '_', ':' }}</a>
+        <a class="sidebar__list-link" href="{{ lesson.permalink | prepend: site.baseurl }}">{{ lesson.title | replace: '_', ':' }}</a>
         {% if page.url contains lesson.permalink and lesson.table_of_contents %}
           <ul class="sidebar__sublist">
             {% for item in lesson.table_of_contents %}
