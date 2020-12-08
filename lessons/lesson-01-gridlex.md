@@ -202,15 +202,14 @@ ___
 
 ## Helpers
 
-There are multiple helpers classes that can be applied to the `.grid`.
+There are multiple helpers classes that can be applied to the `.grid`. These are not all of the available helpers, but only the ones I've use more often. To view all available helpers, visit the official [docs](https://gridlex.devlint.fr/)
 
 ### Horizontal alignment
 
 #### Left (default)
 ```
 <div class="grid">
-  <div class="col-4">
-  </div>
+  <div class="col-4"></div>
 </div>
 ```
 <div class="lesson-1__section">
@@ -223,8 +222,7 @@ There are multiple helpers classes that can be applied to the `.grid`.
 #### Center
 ```
 <div class="grid-center">
-  <div class="col-4">
-  </div>
+  <div class="col-4"></div>
 </div>
 ```
 <div class="lesson-1__section">
@@ -236,8 +234,7 @@ There are multiple helpers classes that can be applied to the `.grid`.
 #### Right
 ```
 <div class="grid-right">
-  <div class="col-4">
-  </div>
+  <div class="col-4"></div>
 </div>
 ```
 <div class="lesson-1__section">
@@ -251,12 +248,9 @@ There are multiple helpers classes that can be applied to the `.grid`.
 #### Top (default)
 ```
 <div class="grid">
-  <div class="col-4">
-  </div>
-  <div class="col-4">
-  </div>
-  <div class="col-4">
-  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
 </div>
 ```
 <div class="lesson-1__section">
@@ -276,12 +270,9 @@ This is one is especially helpful for things like headers where the logo height 
 
 ```
 <div class="grid-middle">
-  <div class="col-4">
-  </div>
-  <div class="col-4">
-  </div>
-  <div class="col-4">
-  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
 </div>
 ```
 <div class="lesson-1__section">
@@ -295,12 +286,9 @@ This is one is especially helpful for things like headers where the logo height 
 #### Bottom
 ```
 <div class="grid-bottom">
-  <div class="col-4">
-  </div>
-  <div class="col-4">
-  </div>
-  <div class="col-4">
-  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
 </div>
 ```
 <div class="lesson-1__section">
@@ -308,5 +296,39 @@ This is one is especially helpful for things like headers where the logo height 
     <div class="col-4"><div class="block"></div></div>
     <div class="col-4"><div class="block block--large"></div></div>
     <div class="col-4"><div class="block"></div></div>
+  </div>
+</div>
+
+### Column ordering
+
+#### Normal flow (default)
+```
+<div class="grid">
+  <div class="col-4">1</div>
+  <div class="col-4">2</div>
+  <div class="col-4">3</div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid">
+    <div class="col-4"><div class="block block--text">1</div></div>
+    <div class="col-4"><div class="block block--text">2</div></div>
+    <div class="col-4"><div class="block block--text">3</div></div>
+  </div>
+</div>
+
+#### Reverse flow
+```
+<div class="grid">
+  <div class="col-4">1</div>
+  <div class="col-4">2</div>
+  <div class="col-4">3</div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-reverse">
+    <div class="col-4"><div class="block block--text">1</div></div>
+    <div class="col-4"><div class="block block--text">2</div></div>
+    <div class="col-4"><div class="block block--text">3</div></div>
   </div>
 </div>
