@@ -34,6 +34,7 @@ $gutter-sm: $gutter / 2;
 $gutter-md: $gutter * 1.5;
 $gutter-lg: $gutter * 2;
 $gutter-xl: $gutter * 3;
+$gutter-xxl: $gutter * 4;
 
 
 $font-default: "system";
@@ -84,7 +85,7 @@ h1,h2,h3,h4,h5,h6{
   line-height: 1.2em;
 }
 hr {
-  margin: $gutter-lg 0 $gutter;
+  margin: $gutter-xl 0 $gutter-lg;
   border: 1px solid $color-default-400;
 }
 p {
@@ -183,6 +184,8 @@ $max-width-content: 1000px;
     list-style-type: none;
 
     &-link {
+      font-weight: 600;
+
       &:hover {
         color: $color-default-100;
         opacity: 1;
@@ -197,6 +200,7 @@ $max-width-content: 1000px;
 
     &-link {
       font-size: 80%;
+      font-weight: 400;
       color: $color-default-100;
     }
     .sidebar__sublist {
@@ -230,7 +234,22 @@ $max-width-content: 1000px;
 .lesson-1__section {
   margin-bottom: -$gutter-md;
 }
+h3 {
+  margin-top: $gutter;
+
+  &:before {
+    content: '';
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    background-color: $color-accent-500;
+  }
+}
 .block {
+  width: 100%;
   margin-bottom: $gutter-md;
   padding: $gutter-lg;
   font-size: 24px;
@@ -241,7 +260,7 @@ $max-width-content: 1000px;
   border-radius: $border-radius;
 
   &--large {
-    padding: $gutter-xl;
+    padding: $gutter-xxl;
   }
   &--text {
     padding: 21px $gutter-lg;

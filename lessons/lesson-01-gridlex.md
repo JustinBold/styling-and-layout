@@ -54,6 +54,46 @@ table_of_contents: [
             title: 'Bottom'
           }
         ]
+      },
+      {
+        title: 'Column ordering',
+        list: [
+          {
+            title: 'Normal flow (default)'
+          },
+          {
+            title: 'Reverse flow'
+          }
+        ]
+      },
+      {
+        title: 'No gutter'
+      },
+      {
+        title: 'Equal height'
+      },
+      {
+        title: 'Distribution',
+        list: [
+          {
+            title: 'Space between'
+          },
+          {
+            title: 'Space around'
+          },
+          {
+            title: 'Center'
+          },
+          {
+            title: 'Columns'
+          },
+          {
+            title: 'Columns reverse'
+          }
+        ]
+      },
+      {
+        title: 'Offset'
       }
     ]
   },
@@ -198,6 +238,8 @@ Feel free to add as many breakpoints as you wish.
   </div>
 </div>
 
+Resize your browser to see it in action.
+
 ___
 
 ## Helpers
@@ -319,7 +361,7 @@ This is one is especially helpful for things like headers where the logo height 
 
 #### Reverse flow
 ```
-<div class="grid">
+<div class="grid-reverse">
   <div class="col-4">1</div>
   <div class="col-4">2</div>
   <div class="col-4">3</div>
@@ -330,5 +372,157 @@ This is one is especially helpful for things like headers where the logo height 
     <div class="col-4"><div class="block block--text">1</div></div>
     <div class="col-4"><div class="block block--text">2</div></div>
     <div class="col-4"><div class="block block--text">3</div></div>
+  </div>
+</div>
+
+### No gutter
+```
+<div class="grid-noGutter">
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-noGutter">
+    <div class="col-4"><div class="block"></div></div>
+    <div class="col-4"><div class="block"></div></div>
+    <div class="col-4"><div class="block"></div></div>
+  </div>
+</div>
+
+### Equal height
+```
+<div class="grid-equalHeight">
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-equalHeight">
+    <div class="col-4"><div class="block"></div></div>
+    <div class="col-4"><div class="block block--text">This is a block with more text than the other columns. But the columns still match the height of the tallest one.</div></div>
+    <div class="col-4"><div class="block"></div></div>
+  </div>
+</div>
+
+### Distribution
+
+#### Space between
+This will distribute the columns evenly, without any margins around the first and last elements.
+```
+<div class="grid-spaceBetween">
+  <div class="col-2"></div>
+  <div class="col-2"></div>
+  <div class="col-2"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-spaceBetween">
+    <div class="col-2"><div class="block"></div></div>
+    <div class="col-2"><div class="block"></div></div>
+    <div class="col-2"><div class="block"></div></div>
+  </div>
+</div>
+
+#### Space around
+This will distribute the columns evenly, while also keeping the margins around the first and last elements.
+```
+<div class="grid-spaceAround">
+  <div class="col-2"></div>
+  <div class="col-2"></div>
+  <div class="col-2"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-spaceAround">
+    <div class="col-2"><div class="block"></div></div>
+    <div class="col-2"><div class="block"></div></div>
+    <div class="col-2"><div class="block"></div></div>
+  </div>
+</div>
+
+#### Center
+```
+<div class="grid-center">
+  <div class="col-2"></div>
+  <div class="col-2"></div>
+  <div class="col-2"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-center">
+    <div class="col-2"><div class="block"></div></div>
+    <div class="col-2"><div class="block"></div></div>
+    <div class="col-2"><div class="block"></div></div>
+  </div>
+</div>
+
+#### Columns
+```
+<div class="grid-columns">
+  <div class="col-4"></div>
+  <div class="col-2"></div>
+  <div class="col-6"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-column">
+    <div class="col-4"><div class="block block--text">1</div></div>
+    <div class="col-2"><div class="block block--text">2</div></div>
+    <div class="col-6"><div class="block block--text">3</div></div>
+  </div>
+</div>
+
+#### Columns reverse
+```
+<div class="grid-columns-reverse">
+  <div class="col-4"></div>
+  <div class="col-2"></div>
+  <div class="col-6"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-column-reverse">
+    <div class="col-4"><div class="block block--text">1</div></div>
+    <div class="col-2"><div class="block block--text">2</div></div>
+    <div class="col-6"><div class="block block--text">3</div></div>
+  </div>
+</div>
+
+### Offset
+This allows an element to 'push' left or right by a specific width.
+```
+<div class="grid">
+  <div class="col-6" data-push-left="off-6"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid">
+    <div class="col-6" data-push-left="off-6"><div class="block"></div></div>
+  </div>
+</div>
+
+```
+<div class="grid-right">
+  <div class="col-4" data-push-right="off-4"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-right">
+    <div class="col-4" data-push-right="off-2"><div class="block"></div></div>
+  </div>
+</div>
+
+They can also be influenced by the media query classes.
+```
+<div class="grid-right">
+  <div class="col-4" data-push-right="off-2_md-0"></div>
+</div>
+```
+<div class="lesson-1__section">
+  <div class="grid-right">
+    <div class="col-4" data-push-right="off-2_md-0"><div class="block"></div></div>
   </div>
 </div>
